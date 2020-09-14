@@ -7,7 +7,7 @@ import pandas as pd
 from sklearn.externals import joblib
 
 ## TODO: Import any additional libraries you need to define a model
-
+from sklearn.svm import LinearSVC
 
 # Provided model load function
 def model_fn(model_dir):
@@ -40,6 +40,7 @@ if __name__ == '__main__':
     
     ## TODO: Add any additional arguments that you will need to pass into your model
     
+    
     # args holds all passed-in arguments
     args = parser.parse_args()
 
@@ -56,11 +57,11 @@ if __name__ == '__main__':
     
 
     ## TODO: Define a model 
-    model = None
+    model = LinearSVC()
     
     
     ## TODO: Train the model
-    
+    model.fit(train_x, train_y)
     
     
     ## --- End of your code  --- ##
